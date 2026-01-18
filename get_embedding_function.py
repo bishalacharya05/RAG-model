@@ -1,10 +1,12 @@
-from langchain_community.embeddings.ollama import OllamaEmbeddings
-from langchain_community.embeddings.bedrock import BedrockEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
+
+import os
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDOMLFBsXHzz1CX-0ZbADatE74hedHDvjw"
 
 def get_embedding_function():
-    embeddings = BedrockEmbeddings(
-        credentials_profile_name="default", region_name="us-east-1"
+    embeddings = GoogleGenerativeAIEmbeddings(
+        model="gemini-embedding-001"   # New 2025 embedding model
     )
-    # embeddings = OllamaEmbeddings(model="nomic-embed-text")
     return embeddings
+
