@@ -1,12 +1,12 @@
 import argparse
 import os
-
+from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 from get_embedding_function import get_embedding_function
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyDOMLFBsXHzz1CX-0ZbADatE74hedHDvjw"
+load_dotenv()  # loads variables from .env
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CHROMA_PATH = os.path.join(BASE_DIR, "chroma")
