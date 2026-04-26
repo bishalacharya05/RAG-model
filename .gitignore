@@ -1,2 +1,5 @@
 rag-model/.env
+rag-Model/.env
+*.env
+.env
 .venv
